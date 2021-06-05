@@ -1,0 +1,27 @@
+<div class="entry-form">
+  <form [formGroup]="form" #formDirective="ngForm" (ngSubmit)='onSubmit(formDirective)' class='mat-elevation-z8'>
+    <h2 class="title is-5">New Password</h2>
+
+    <mat-form-field>
+      <input matInput placeholder='Website' formControlName='website'>
+    </mat-form-field>
+    <small *ngIf='form.get("website")!.hasError("required") && form.get("website")!.touched' class='danger-text'>This field is required</small>
+    
+    <mat-form-field>
+      <input matInput placeholder='Email' formControlName='email'>
+    </mat-form-field>
+    <small *ngIf='form.get("email")!.hasError("required") && form.get("email")!.touched' class='danger-text'>This field is required</small>
+    <small *ngIf='form.get("email")!.hasError("email") && form.get("email")!.touched' class='danger-text'>This field must be a valid email</small>
+
+    <mat-form-field>
+      <input matInput placeholder='Password' type='password' formControlName='password'>
+    </mat-form-field>
+    <small *ngIf='form.get("password")!.hasError("required") && form.get("password")!.touched' class='danger-text'>This field is required</small>
+    <small *ngIf='form.get("password")!.hasError("minLength") && form.get("password")!.touched' class='danger-text'>Password must be atleast 8 characters</small>
+
+    <button [disabled]='form.invalid' mat-raised-button color='primary'>
+      <mat-icon>add</mat-icon>
+      Add
+    </button>
+  </form>
+</div>

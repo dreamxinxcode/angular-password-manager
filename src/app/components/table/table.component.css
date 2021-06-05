@@ -1,0 +1,19 @@
+.table-area {
+  display: flex;
+  justify-content: center;
+  margin: 3rem 0;
+}
+
+table {
+  width: 50%;
+  border-radius: .25rem;
+}
+
+th {
+  font-weight: 500;
+  letter-spacing: .05rem;
+}
+
+td {
+  padding: .25rem;
+}
